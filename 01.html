@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Atividade 01</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            
+            
+            var dado = prompt("Digite um um dado","");
+        // if (confirm("Quer saber o tipo de dado?")){  
+        // }
+            if (isNaN(dado)){
+                console.log(`${dado} Você digitou um número.`);
+            }
+            else if (typeof dado === "string"){
+                console.log(`${dado} Você digitou um string.`);
+            }
+            if (typeof dado === "boolean"){
+                console.log(`${dado} Você digitou um valor booleano.`);
+            }else{
+                console.log("Tipo de dado não reconhecido");
+            }
+        
+                
+        </script>
+        <a href="semana1.html">Voltar</a>
+    </body>
+</html>
