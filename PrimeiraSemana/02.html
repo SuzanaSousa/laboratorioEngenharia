@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Atividade 01</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+        
+            var num = prompt("Digite um número");
+            const isPrime = (num ) =>{
+                for(let i = 2; i < num; i ++){
+                    if (num % i === 0) {
+                        return false
+                        
+                    }
+                }
+                return true;
+            }         
+            if(isPrime(num)){
+                alert(`${num} É um numero primo`)
+
+            }else
+            {
+                alert(`${num} Não é um número primo`)
+            }
+            
+        </script>
+        <a href="semana1.html">Voltar</a>
+    </body>
+</html>

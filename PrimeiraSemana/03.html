@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Atividade 03</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // Solicitar ao usuário para inserir um número
+            const num = prompt("Digite um número positivo");
+            // Verificar se a entrada é válida
+            if (isNaN(num) || num < 0){
+                alert("Por favor, informe um número valído que  seja positivo")
+            }else{
+                // Verificar se a entrada é válida é par ou impar
+                if(num % 2 === 0){
+                    alert(`${num} é um número par.`);
+
+                }else{
+                    alert(`${num} é um numero impar`)
+                }
+        
+            }
+                
+        </script>
+        <a href="semana1.html">Voltar</a>
+    </body>
+</html>
