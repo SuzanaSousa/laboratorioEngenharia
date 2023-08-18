@@ -12,42 +12,44 @@
         <form id="form">
             
             <input type="text" id="dado" placeholder="Digite um número:">
-            <button type="button" onclick="guarda.salvarNumero()">Inserir</button>
+            <button type="button" onclick="guarda.inserirNumero()">Inserir</button>
         </form>
         <h2>Dados Informados:</h2>
         <ol id="dadolist"></ol>
         <script>
             
-            class salvarnumero{
+            class salvarNumero{
                 constructor(){
                     this.numeros = [];
                 }
 
-                salvarNumero() {
+                inserirNumero() {
                    const dadoInput = document.getElementById('dado');
-                   const numero = inputElement.value.trim();
+                   const numero = dadoInput.value.trim();
                    if(numero !== ''){
-                    this.nuemros.push(numero);
-                    inputElement.value = '';
-                    this.atualListOrd();
+                        this.numeros.push(numero);
+                        dadoInput.value = '';
+                        this.atualListOrd();
                    }
                 }
                 atualListOrd(){
-                    const inputElement = document.getElementById('dado');
+                    const dadolistElement = document.getElementById('dado');
                         dadolistElement.innerHTML = '';
-                    const numeroOrd = numero.slice().sort(function(b, c){
-                        console.log(b - c)
-                        return b - c
+
+                    const numeroOrd = this.numero.slice().sort(function(b, c){
+                       
+                        return b - c;
 
                     });
                     for(const numero of numeroOrd){
-                        liElement.textContent = numero;
+                       const liElement = document.createElement('li');
+                       liElement.textContent = numero;
                         dadolistElement.appendChild(liElement);
                     }
                 }
                                     
             }
-            const organizar = new salvarnumero();        
+            const guarda = new salvarNumero();        
                         
                         
                               
