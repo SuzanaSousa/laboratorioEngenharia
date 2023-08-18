@@ -7,24 +7,51 @@
     
     </head>
     <body>
+       
         <h1>Atividade 01</h1>
-        <script type="text/javascript">
-           var numero = document.querySelector("input")
-            var but = document.querySelector("button")
-            var numeros = [];
-            but.onclick = function(){
-                numeros.push(numero);
-                document.write(numeros);
-                
+        <form id="form">
             
-            }
-            //numeros.sort() 
+            <input type="text" id="dado" placeholder="Digite um número:">
+            <button type="button" onclick="guarda.salvarNumero()">Inserir</button>
+        </form>
+        <h2>Dados Informados:</h2>
+        <ol id="dadolist"></ol>
+        <script>
             
-        
-           
-           
+            class salvarnumero{
+                constructor(){
+                    this.numeros = [];
+                }
 
+                salvarNumero() {
+                   const dadoInput = document.getElementById('dado');
+                   const numero = inputElement.value.trim();
+                   if(numero !== ''){
+                    this.nuemros.push(numero);
+                    inputElement.value = '';
+                    this.atualListOrd();
+                   }
+                }
+                atualListOrd(){
+                    const inputElement = document.getElementById('dado');
+                        dadolistElement.innerHTML = '';
+                    const numeroOrd = numero.slice().sort(function(b, c){
+                        console.log(b - c)
+                        return b - c
+
+                    });
+                    for(const numero of numeroOrd){
+                        liElement.textContent = numero;
+                        dadolistElement.appendChild(liElement);
+                    }
+                }
+                                    
+            }
+            const organizar = new salvarnumero();        
+                        
+                        
+                              
         </script>
-        <a href="../index.html">Voltar</a>
+        <a href="./semana2.html">Voltar</a>
     </body>
 </html>

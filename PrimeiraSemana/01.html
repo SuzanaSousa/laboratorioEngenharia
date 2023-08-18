@@ -11,22 +11,27 @@
             
             var dado = prompt("Digite um um dado","");
             if (confirm("Quer saber o tipo de dado?")){  
-        
-            if (!isNaN(dado)){
-                x = parseInt(x);
-              document.write(`Você digitou é um :${typeof(x)} `);
-            }
-            else if (dado == "true" || dado == "false"){
-                x = false;
-                document.write(`Você digitou é um :${typeof(x)} `);
             
-            }else{
-                document.write(`Você digitou é um :${typeof(x)} `);
+                if (!isNaN(dado)){
+                    x = parseInt();
+                    "<br>"
+                document.write(`Você digitou é um :${typeof(x)} ` );"<br>"
+                }
+                else {
+                    if (dado == "true" || dado == "false"){
+                    x = false;
+                    document.write(`Você digitou é um :${typeof(x)} `);"<br>"
+                    
+                    }else{ 
+                        document.write(`Você digitou é um :${typeof(x)} `);"<br>"
+                    }
+                }
             }
-        }
-        else{
-            document.write("Agradecemos pela sua visita!")
-        }
+            else{
+                document.write("Agradecemos pela sua visita!")
+            }
+        
+
                 
         </script>
         <a href="semana1.html">Voltar</a>
