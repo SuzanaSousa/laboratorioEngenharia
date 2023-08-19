@@ -10,46 +10,31 @@
        
         <h1>Atividade 01</h1>
         <form id="form">
-            
-            <input type="text" id="dado" placeholder="Digite um número:">
-            <button type="button" onclick="guarda.inserirNumero()">Inserir</button>
+            <label for="value">Digite um número:</label>
+            <input type="text" id="dado" required>
+            <button type="button" id="addButton">Inserir</button>
         </form>
         <h2>Dados Informados:</h2>
-        <ol id="dadolist"></ol>
+        <ol id="dadoList"></ol>
         <script>
             
-            class salvarNumero{
-                constructor(){
-                    this.numeros = [];
-                }
+            const addButton = document.getElementById("addButton")
+            const dadoList = document.getElementById("dadoList")
+            const dados = [];
 
-                inserirNumero() {
-                   const dadoInput = document.getElementById('dado');
-                   const numero = dadoInput.value.trim();
-                   if(numero !== ''){
-                        this.numeros.push(numero);
-                        dadoInput.value = '';
-                        this.atualListOrd();
-                   }
+            addButton.addEventListener("click", () => {
+                const novoDado = dado.dado.trim();
+                if(novoDado){
+                    dados.push(novoDado);
+                    dado.dado = "";
+                    displayDados();
                 }
-                atualListOrd(){
-                    const dadolistElement = document.getElementById('dado');
-                        dadolistElement.innerHTML = '';
-
-                    const numeroOrd = this.numero.slice().sort(function(b, c){
-                       
-                        return b - c;
-
-                    });
-                    for(const numero of numeroOrd){
-                       const liElement = document.createElement('li');
-                       liElement.textContent = numero;
-                        dadolistElement.appendChild(liElement);
-                    }
-                }
-                                    
+            });
+            function displayDados(){
+                dadoList.innerHTML = dados.map(val =>`<li>${val}</li>`).sort().join("");
             }
-            const guarda = new salvarNumero();        
+
+                 
                         
                         
                               
