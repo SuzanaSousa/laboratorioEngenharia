@@ -17,27 +17,34 @@
         <h2>Dados Informados:</h2>
         <ol id="dadoList"></ol>
         <script>
-            
-            const addButton = document.getElementById("addButton")
-            const dadoList = document.getElementById("dadoList")
+            const addButton = document.getElementById("addButton");
+            const dadoList = document.getElementById("dadoList");
+           
             const dados = [];
 
             addButton.addEventListener("click", () => {
-                const novoDado = dado.dado.trim();
-                if(novoDado){
+                const dadoInput = document.getElementById("dado")
+                const novoDado = dadoInput.value.trim();
+        
+                if(novoDado !== ""){
                     dados.push(novoDado);
-                    dado.dado = "";
+                    dadoInput.value = "";
                     displayDados();
                 }
             });
             function displayDados(){
-                dadoList.innerHTML = dados.map(val =>`<li>${val}</li>`).sort().join("");
-            }
+                dadoList.innerHTML ="";
+                const sortedDados = dados.slice().sort((x, y) => x - y);
+                for(const dado of sortedDados){
+                    const listElement = document.createElement("list");
+                  
+                    listElement.textContent = dado;
+                    dadoList.appendChild(listElement);
+                }
+            
 
-                 
-                        
-                        
-                              
+            }
+        
         </script>
         <a href="./semana2.html">Voltar</a>
     </body>
