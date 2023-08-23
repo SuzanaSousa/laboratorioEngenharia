@@ -36,12 +36,11 @@
                 dadoList.innerHTML ="";
                 const sortedDados = dados.slice().sort((x, y) => x - y);
                 for(const dado of sortedDados){
-                    const listElement = document.createElement("list");
+                    const listElement = document.createElement("li");
                   
                     listElement.textContent = dado;
                     dadoList.appendChild(listElement);
                 }
-            
 
             }
         

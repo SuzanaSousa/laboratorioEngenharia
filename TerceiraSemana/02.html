@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Terceira Semana </title>
+</head>
+<body>
+    <button id="botao">Display Time</button>
+    <div id="timeDisplay"></div>
+     <script>
+        document.getElementById("botao").addEventListener("click",horaAtual);
+        function horaAtual(){
+            let hora = new Date().toLocaleTimeString();
+            document.getElementById("timeDisplay") .textContent = hora;;
+
+        }
+        window.setInterval(horaAtual(),1000);
+    </script>            
+</body>
+    <a href="./semana3.html">Voltar</a>
+</html>

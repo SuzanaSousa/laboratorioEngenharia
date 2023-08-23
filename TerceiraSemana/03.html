@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Terceira Semana </title>
+</head>
+<body>
+ 
+
+    <h1>Verificador de Palíndromo</h1>
+    <label for="inputPalavra">Digite uma palavra:</label>
+    <input type="text" id="inputPalavra">
+    <button onclick="checkPalindrome()">Verificar</button>
+    <p id="result"></p>
+
+    <script>
+        function checkPalindrome() {
+            const inputElement = document.getElementById("inputPalavra");
+            const resultElement = document.getElementById("result");
+            
+            const palavra = inputElement.value.toLowerCase().replace(/\s/g, ""); // Remover espaços e tornar minúsculo
+            const reversedPalavra = palavra.split("").reverse().join("");
+
+            if (palavra === reversedPalavra) {
+                resultElement.textContent = (`"${inputElement.value}" é um palíndromo!`);
+            } else {
+                resultElement.textContent = (`"${inputElement.value}" não é um palíndromo.`);
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+

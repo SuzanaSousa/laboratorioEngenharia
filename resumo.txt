@@ -1,0 +1,32 @@
+
+22/08/2023
+
+metodos
+objetos - 
+ 
+window - não precisar especificar
+location - na barra de endereço do navegador
+history - historio de navegação da sua pagina
+document - 
+perf- caminho fisico do arquivo
+dom dos navegadores
+render tree -  copia do dom
+
+eventos - ações dos usuários nos objetos
+sempre começa com on seguido do evento
+
+funções ou subrotimas
+
+function - retornar um valor com return
+
+listener - aguardado que um outro evento ocorra
+
+function  - function NOME FUNÇÃO ()
+
+função anonima - function()
+
+arrow function - () =>
+
+
+
+
