@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Caracteristicas de um Carro</title>
+      <link rel="stylesheet" href="./Css/style02.css">
+      <script>
+        function calcularUtilidadeEValor() {
+          // Obtém os valores preenchidos no formulário
+          const modelo = document.getElementById("modelo").value;
+          const marca = document.getElementById("marca").value;
+          const ano = parseInt(document.getElementById("ano").value);
+          const cor = document.getElementById("cor").value;
+          const quilometragem = parseInt(document.getElementById("quilometragem").value);
+          const valor = parseFloat(document.getElementById("valor").value);
+
+          // Calcula os anos de utilidade
+          let anosDeUtilidade = 0;
+          if (quilometragem <= 30000) {
+            anosDeUtilidade = ano + 15; // Carros com até 300.000 km têm 15 anos de utilidade
+          } else if (quilometragem > 30000 &&  quilometragem <=50000 ) {
+            anosDeUtilidade = ano + 10; // Carros com 300.000 a 400.000 km têm 10 anos de utilidade
+          } else {
+            anosDeUtilidade = ano + 5; // Carros com mais de 400.000 km têm 5 anos de utilidade
+          }
+
+          // Calcula o valor de mercado
+          let valorDeMercado = valor;
+          if (quilometragem <= 300000) {
+            valorDeMercado = valor; // Carros com até 300.000 km mantêm 100% do valor
+          } else if (quilometragem <= 400000) {
+            valorDeMercado = valor * 0.8; // Carros com 300.000 a 400.000 km mantêm 80% do valor
+          } else {
+            valorDeMercado = valor * 0.5; // Carros com mais de 400.000 km mantêm 50% do valor
+          }
+
+          // Exibe os resultados
+          document.getElementById("utilidade").innerHTML = `Anos de Utilidade: ${anosDeUtilidade}`;
+          document.getElementById("mercado").innerHTML = `Valor de Mercado: R$ ${valorDeMercado.toFixed(2)}`;
+        }
+      </script>
+    </head>
+  <body>
+    <form id="cadastroForm">
+      <h1  class=" tema">Caracteristicas de um Carro</h1>
+      
+        <div class="tema1">
+
+          <label for="modelo">Modelo:</label>
+          <input type="text" id="modelo" name="modelo"><br>
+
+          <label for="marca">Marca:</label>
+          <input type="text" id="marca" name="marca"><br>
+
+          <label for="ano">Ano:</label>
+          <input type="number" id="ano" name="ano"><br>
+
+          <label for="cor">Cor:</label>
+          <input type="text" id="cor" name="cor"><br>
+
+          <label for="quilometragem">Quilometragem:</label>
+          <input type="number" id="quilometragem" name="quilometragem"><br>
+
+          <label for="valor">Valor:</label>
+          <input type="number" id="valor" name="valor"><br>
+            
+
+        </div>
+      <div class="tema3">
+        <input type="button" value="Calcular" onclick="calcularUtilidadeEValor()">
+      </div>
+      <div>
+        <a href="./semana4.html">Voltar</a>
+      </div>
+      
+
+    </form>
+      <div class="tema4">
+        <div id="utilidade"></div>
+        <div id="mercado"></div>
+      </div>
+
+  </body>
+</html>

@@ -1,0 +1,37 @@
+.tema{
+    text-align: center;
+}
+.tema1{
+    text-align: center;
+
+   
+}
+.tema2{
+    padding-top: 10%;
+    padding-bottom: 20px;
+    max-width: 600px;  
+}
+form {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+ } 
+input[type="text"],
+input[type="number"] {
+    width: 35%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 7px; 
+}
+.tema3,.tema4{
+    text-align: center;
+    font-size: 25px;
+}
+label {
+    display:flex;
+    font-size: 25px;
+}
