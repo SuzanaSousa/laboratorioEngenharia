@@ -1,0 +1,151 @@
+<script>
+    class Cadastro {
+      constructor(nome, dataNascimento, email,matricula, contato1,contato2) {
+            this.nome = nome;
+            this.dataNascimento = dataNascimento;
+            this.email = email;
+            this.matricula = matricula;
+            this.contato1 = contato1;
+            this.contato2 = contato2;
+        }
+    }
+    
+    // Classe Aluno, que herda da classe Cadastro
+    class Aluno extends Cadastro {
+      constructor(nome, dataNascimento, email, contato1,contato2, curso) {
+        super(nome, dataNascimento, email, contato1,contato2);
+        this.curso = curso;
+     
+      }
+    }
+    
+    // Classe Professor, que herda da classe Cadastro
+    class Professor extends Cadastro {
+      constructor(nome, dataNascimento, email, contato1,contato2,area,lattes) {
+        super(nome, dataNascimento, email, contato1,contato2);
+        this.area = area;
+        this.lattes = lattes;
+      }
+    }
+</script>
+<!DOCTYPE html>
+    <html>
+    <head>
+      <title>Formulário de Cadastro</title>
+      <link rel="stylesheet" href="css/stalyes.css">
+      <style>
+        .aluno-fields, .professor-fields {
+          display: none;
+        }
+      </style>
+    </head>
+    <body>
+     
+        <form id="cadastroForm">
+            <h1>Formulário  de Cadastro:</h1>
+            <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" 
+            placeholder="Digite seu nome Completo"><br><br>
+            </div>
+            <div class="form-row">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" 
+            placeholder="fulano@.com" ><br><br>
+            <label for="dataNascimento">Data de Nascimento:</label>
+            <input type="date" id="dataNascimento" name="dataNascimento" required><br><br>
+            </div>
+            <div class="form-row">
+                <label for="contato1">Telefone Fixo:</label>
+                <input type="text" id="contato1" placeholder="(99)99999999"><br><br>
+            
+                <label for="contato2">Telefone Celular:</label>
+                <input type="text" id="contato2" placeholder="(99)99999999"><br><br>
+            </div>
+            <div class="opcao1">
+            <input type="radio" id="aluno" name="tipo" value="aluno" required>
+            <label for="aluno">Aluno</label>
+            </div>
+            <div class="opcao2">
+            <input type="radio" id="professor" name="tipo" value="professor" required>
+            <label for="professor">Professor</label><br>
+            </div>
+            <div class="possicao">
+            <label for="matricula">Matrícula:</label>
+            <input type="text" id="matricula" name="matricula"   placeholder="Digite sua matrícula" ><br><br>
+            </div>
+            <div class="aluno-fields">
+            <label for="curso">Curso:</label>
+            <input type="text" id="curso" name="curso" placeholder="Digite seu curso"><br><br>
+            </div>
+        
+            <div class="professor-fields">
+            <label for="area">Área:</label>
+            <input type="text" id="area" name="area"  placeholder="Digite sua área de atuação"><br><br>
+            <label for="lattes">Lattes:</label>
+            <input type="text" id="area" name="area"  placeholder="Digite aqui o endereço para seu Lattes "><br><br>
+            </div>
+        
+            
+        
+            <div class="center">
+                <input type="submit" value="Enviar">
+                <input type="submit" value="Redefinir">
+            </div>
+            </div>
+        </form>
+    
+        <script>
+            const alunoFields = document.querySelector('.aluno-fields');
+            const professorFields = document.querySelector('.professor-fields');
+            const cadastroResult = document.getElementById('cadastroResult');
+            const cadastroInfo = document.getElementById('cadastroInfo');
+            const nome = document.getElementById("nome").value;
+            const dataNascimento = document.getElementById("dataNascimento").value;
+            const email = document.getElementById("email").value;
+            const contato = document.getElementById("contato").value;
+            const tipo = document.querySelector('input[name="tipo"]:checked').value;
+        
+            let info = `Nome: ${nome}<br>Data de Nascimento: ${dataNascimento}<br>Email: ${email}<br>Contato: ${contato}`;
+        
+            document.getElementById("cadastroForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+        
+            const nome = document.getElementById("nome").value;
+            const dataNascimento = document.getElementById("dataNascimento").value;
+            const email = document.getElementById("email").value;
+            const contato1 = document.getElementById("contato1").value;
+            const contato2 = document.getElementById("contato2").value;
+            const tipo = document.querySelector('input[name="tipo"]:checked').value;
+        
+            let info = `Nome: ${nome}<br>Data de Nascimento: ${dataNascimento}<br>Email: ${email}<br>Contato Fixo: ${contato1}<br>Contato Celular: ${contato2}`;
+        
+        
+            if (tipo === "aluno") {
+                const curso = document.getElementById("curso").value;
+                console.log("Cadastro de Aluno:", { nome, dataNascimento, email,contato1,contato2, curso, matricula });
+                info += `<br>Curso: ${curso}`;
+            } else {
+                const area = document.getElementById("area").value;
+                const lattes = document.getElementById("area").value;
+                console.log("Cadastro de Professor:", { nome, dataNascimento, email, contato1,contato2, matricula,area, lattes });
+                info += ` <br>Area: ${area} <br>Lattes: ${lattes}`;
+            }
+            
+            cadastroInfo.innerHTML = info;
+            cadastroResult.style.display = "block";
+            });
+        
+            document.getElementById("aluno").addEventListener("change", function() {
+            alunoFields.style.display = this.checked ? "block" : "none";
+            professorFields.style.display = this.checked ? "none" : "block";
+            });
+        
+            document.getElementById("professor").addEventListener("change", function() {
+            professorFields.style.display = this.checked ? "block" : "none";
+            alunoFields.style.display = this.checked ? "none" : "block";
+            });
+        </script>
+    </body>
+</html>
+    

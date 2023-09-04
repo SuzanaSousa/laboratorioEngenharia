@@ -1,0 +1,120 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f0f0f0;
+    
+    margin-top: 20px;
+    padding: 0;
+    font-size: 15px;
+  } 
+
+   h1 {
+    text-align: center;
+ 
+    color: #060000;
+    margin-top: 5px;
+  } 
+
+  form {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  } 
+
+  label {
+    display: block;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+  }
+  
+  .aluno-fields,
+  .professor-fields {
+   display: none;
+  }
+
+  #cadastroResult {
+    max-width: 600px;
+    margin: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+
+  #cadastroResult h2 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+  }
+
+  #cadastroInfo {
+    padding: 10px;
+  }
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  .form-row label {
+    flex: 0.4;
+    margin-right: 1%;
+  } 
+
+  .form-row input {
+    flex: 3;
+    margin-right: 6%; 
+  } 
+  #cadastroResult h2 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+  }
+
+  #cadastroInfo {
+    padding: 10px;
+  }
+  .opcao1{
+    margin-left: 60%;
+    
+  }
+  .opcao1,label{
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .opcao2{
+    margin-left: 60%;
+  }
+  .opcao2,label{
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .possicao,aluno-fields,professor-fields{
+    margin-right: 20%;
+    max-width: 500px;
+    margin-bottom: 50px;
+
+ }
+ .aluno-fields, .professor-fields{
+  margin-top: -5%;
+ }
+ .center{
+  text-align: center;
+  padding: 20px;
+
+  
+ }
