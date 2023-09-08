@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Pessoas</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+    <div class="zerar">
+        <img src="./Img/Zerar.jpg" alt="" id="imagemZerarContador" width="50px">   
+    </div>
+    <div>
+        <div class="contador-div" id="totalDiv"></div> 
+    </div>
+    <div class="">
+        <div class="contador-div" id="homensDiv"></div>
+    </div>
+    <div>
+        <div class="contador-div" id="mulheresDiv"></div>
+    </div>
+    
+    
+  
+   <!--  <button id="btnMasculino">Homem +</button>
+    <button id="btnFeminino">Mulher +</button> -->
+
+    <!-- Botões para subtrair, subtração e zerar -->
+    <!-- <button id="btnSubtrairFeminino">Mulher -</button>
+    <button id="btnSubtrairMasculino">Homem  -</button> -->
+    <!--    <button id="btnZerar">Zerar</button>
+        -->
+    <!-- Imagens de representação dos sexos -->
+    
+    <div id="imagens">
+        <!-- Imagem de controle para adcionar sexo  -->
+        <div class="posicao01">
+           <img src="./Img/homen.jpg" alt="Masculino" id="imagemMasculino" width="110px" height="110px">
+        </div>
+        <div class="posicao02">
+                <img src="./Img/mulher.png" alt="Feminino" id="imagemFeminino" width="100px" height="110px">
+        </div>
+            
+        <!-- Imagem de controle para  sexo masculino -->  
+      
+        <div class="img02">
+            <img src="./Img/adcionar.jpg" alt="" id="imagemAddMasculino" width="95px" height="90px">
+            <img src="./Img/subtrair.jpg" alt="" id="imagemSubtrairMasculino" width="75px" height="70px">   
+        </div>
+        <!-- Imagem de controle para  sexo feminino -->
+        <div class="img01">
+            <img src="./Img/adcionar.jpg" alt="" id="imagemAddFeminino"  width="95px" height="90px">
+            <img src="./Img/subtrair.jpg" alt="" id="imagemSubtrairFeminino"  width="75px" height="70px">
+         </div>
+    </div>
+    <script>
+        // Contadores
+        let contadorMasculino = 0;
+        let contadorFeminino = 0;
+        let contadorTotal = 0;
+
+        // Função para atualizar os contadores
+        function atualizarContadores() {
+            totalDiv.textContent = `Total: ${contadorTotal}`;
+            homensDiv.textContent = `Homens: ${contadorMasculino}`;
+            mulheresDiv.textContent = `Mulheres: ${contadorFeminino}`;
+        }
+
+        // Event listeners para os botões de sexo
+        imagemAddMasculino.addEventListener('click', () => {
+            contadorMasculino++;
+            contadorTotal++;
+            atualizarContadores();
+        });
+
+        imagemAddFeminino.addEventListener('click', () => {
+            contadorFeminino++;
+            contadorTotal++;
+            atualizarContadores();
+        });
+
+        // Event listener para o botão de subtração
+        imagemSubtrairFeminino.addEventListener('click', () => {
+            if (contadorFeminino > 0){
+                contadorFeminino--;
+                atualizarContadores();
+            }
+        });
+        imagemSubtrairMasculino.addEventListener('click', () => {
+            if (contadorMasculino > 0){
+                contadorMasculino--;
+                atualizarContadores();
+            }
+        });
+        // Event listener para o botão de zerar
+        imagemZerarContador.addEventListener('click', () => {
+            contadorMasculino = 0;
+            contadorFeminino = 0;
+            contadorTotal = 0;
+            atualizarContadores();
+        });
+
+        // Atualiza os contadores a cada segundo
+        setInterval(atualizarContadores, 1000);
+    </script>
+    <div>
+      <a href="./semana5.html">Voltar</a>
+     </div>
+    
+</body>
+</html>

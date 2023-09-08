@@ -1,0 +1,60 @@
+ 
+ /* Estilo para a div do contador */
+ 
+ .contador-div {
+    font-size: 24px;
+    text-align: center;
+    padding: 15px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    width: 250px;
+    margin-top: 40px;
+    margin-left: 40%;
+  }
+  
+      
+  
+  /* Estilo para as imagens */
+  #imagens {
+      text-align: center;
+      width: 100px;
+      height: 100px;
+      display:flex;
+     
+  }
+  
+  .img01{
+    display:inline-flex;
+    margin-top: 250%;
+    margin-left: 250%;
+    margin-bottom: 100%;
+   
+  }
+  .img02{
+    display: inline-flex;
+    margin-top: 250%;
+    margin-left: -500%;
+    margin-bottom: 100%;
+    
+  }
+  .zerar{
+    padding-inline-start: 0%;
+    margin-left: 70%;
+    margin-top: 15px;
+  }
+  .posicao01{
+    display:inline-flex;
+    margin-top: 150%;
+    margin-left: 450%;
+    margin-bottom: 100%;
+    
+  }
+  .posicao02{
+    display:inline-flex;
+    margin-top: 150%;
+    margin-left: 300%;
+    margin-bottom: 100%;
+    width: 50%;
+    height: 50%;
+  }
+    
