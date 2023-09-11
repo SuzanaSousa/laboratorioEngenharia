@@ -57,4 +57,21 @@
     width: 50%;
     height: 50%;
   }
+  .botao{
+    border: solid 2px rgb(20, 22, 22);
+    border-radius: 30px;
+    font-size: 20px;
+    padding: 10px;
+    width: 100px;
+    color: rgb(19, 21, 21);
+    background-color: rgba(244, 237, 242, 0.977);
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
+    margin-top: -32%;
+    text-align: center;
+  }
+  .botao:hover{
+    background-color: rgb(131, 164, 182);
+    color: white;
+    transform: scale(1.2)
+  }
     
