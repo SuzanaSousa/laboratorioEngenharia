@@ -122,12 +122,12 @@
         const camposObrigatorios = document.querySelectorAll('[required]');
         let todosPreenchidos = true;
 
-          camposObrigatorios.forEach(function (campo) {
+          /* camposObrigatorios.forEach(function (campo) {
             if (campo.value.trim() === '') {
                     todosPreenchidos = false;
                     return;
                 }
-            });
+            }); */
 
           enviarButton.disabled = !todosPreenchidos;
           const tipo = document.querySelector('input[name="tipo"]:checked').value;
