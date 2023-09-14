@@ -1,77 +1,83 @@
  
  /* Estilo para a div do contador */
- 
- .contador-div {
-    font-size: 24px;
-    text-align: center;
-    padding: 15px;
-    border: 2px solid #333;
-    border-radius: 10px;
-    width: 250px;
-    margin-top: 40px;
-    margin-left: 40%;
-  }
+.body {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #f0f0f0;
+  margin-top: 20px;
+  padding: 0;
+  font-size: 15px;
+} 
+.contador-div {
+  font-size: 24px;
+  text-align: center;
+  padding: 15px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  width: 250px;
+  margin-top: 40px;
+  margin-left: 40%;
+}
   
       
   
   /* Estilo para as imagens */
-  #imagens {
-      text-align: center;
-      width: 100px;
-      height: 100px;
-      display:flex;
-     
-  }
-  
-  .img01{
-    display:inline-flex;
-    margin-top: 250%;
-    margin-left: 250%;
-    margin-bottom: 100%;
-   
-  }
-  .img02{
-    display: inline-flex;
-    margin-top: 250%;
-    margin-left: -500%;
-    margin-bottom: 100%;
-    
-  }
-  .zerar{
-    padding-inline-start: 0%;
-    margin-left: 70%;
-    margin-top: 15px;
-  }
-  .posicao01{
-    display:inline-flex;
-    margin-top: 150%;
-    margin-left: 450%;
-    margin-bottom: 100%;
-    
-  }
-  .posicao02{
-    display:inline-flex;
-    margin-top: 150%;
-    margin-left: 300%;
-    margin-bottom: 100%;
-    width: 50%;
-    height: 50%;
-  }
-  .botao{
-    border: solid 2px rgb(20, 22, 22);
-    border-radius: 30px;
-    font-size: 20px;
-    padding: 10px;
-    width: 100px;
-    color: rgb(19, 21, 21);
-    background-color: rgba(244, 237, 242, 0.977);
-    transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
-    margin-top: -32%;
+#imagens {
     text-align: center;
-  }
-  .botao:hover{
-    background-color: rgb(131, 164, 182);
-    color: white;
-    transform: scale(1.2)
-  }
+    width: 100px;
+    height: 100px;
+    display:flex;
+     
+}
+  
+.img01{
+  display:inline-flex;
+  margin-top: 250%;
+  margin-left: 250%;
+  margin-bottom: 100%;
+   
+}
+.img02{
+  display: inline-flex;
+  margin-top: 250%;
+  margin-left: -500%;
+  margin-bottom: 100%;
+    
+}
+.zerar{
+  padding-inline-start: 0%;
+  margin-left: 70%;
+  margin-top: 15px;
+}
+.posicao01{
+  display:inline-flex;
+  margin-top: 150%;
+  margin-left: 450%;
+  margin-bottom: 100%;
+    
+}
+.posicao02{
+  display:inline-flex;
+  margin-top: 150%;
+  margin-left: 300%;
+  margin-bottom: 100%;
+  width: 50%;
+  height: 50%;
+}
+.botao{
+  border: solid 2px rgb(20, 22, 22);
+  border-radius: 30px;
+  font-size: 20px;
+  padding: 10px;
+  width: 100px;
+  color: rgb(19, 21, 21);
+  background-color: rgba(244, 237, 242, 0.977);
+  transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
+  margin-top: -32%;
+  text-align: center;
+}
+.botao:hover{
+  background-color: rgb(131, 164, 182);
+  color: white;
+  transform: scale(1.2)
+}
     

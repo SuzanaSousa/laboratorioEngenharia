@@ -1,0 +1,28 @@
+.calculadora{
+    max-width: 60%;
+    margin: 0 auto;
+    text-align: center;
+   /*  background-color: rgb(164, 13, 13); */
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 5px;
+
+    
+}
+.visor{
+    width:100%;
+    height: 50px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    grid-column: span 4;
+}
+#button{
+    padding: 10px;
+    width: 67px;
+    height: 45px;
+    margin-top: 10px;
+    background-color: rgb(194, 194, 194);
+    color: black;
+    font-size: 20px;
+
+}

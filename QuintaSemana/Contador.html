@@ -66,7 +66,7 @@
             mulheresDiv.textContent = `Mulheres: ${contadorFeminino}`;
         }
 
-        // Event listeners para os botões de sexo
+        // lista linear para os botões de sexo
         imagemAddMasculino.addEventListener('click', () => {
             contadorMasculino++;
             contadorTotal++;
@@ -79,7 +79,7 @@
             atualizarContadores();
         });
 
-        // Event listener para o botão de subtração
+        //  lisa linear para o botão de subtração
         imagemSubtrairFeminino.addEventListener('click', () => {
             if (contadorFeminino > 0){
                 contadorFeminino--;
@@ -92,7 +92,7 @@
                 atualizarContadores();
             }
         });
-        // Event listener para o botão de zerar
+        //  lista linear para o botão de zerar
         imagemZerarContador.addEventListener('click', () => {
             contadorMasculino = 0;
             contadorFeminino = 0;
