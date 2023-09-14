@@ -12,8 +12,8 @@
     
     // Classe Aluno, que herda da classe Cadastro
     class Aluno extends Cadastro {
-      constructor(nome, dataNascimento, email, contato1,contato2, curso) {
-        super(nome, dataNascimento, email, contato1,contato2);
+      constructor(nome, dataNascimento, email,matricula, contato1,contato2, curso) {
+        super(nome, dataNascimento, email,matricula, contato1,contato2);
         this.curso = curso;
      
       }
@@ -21,8 +21,8 @@
     
     // Classe Professor, que herda da classe Cadastro
     class Professor extends Cadastro {
-      constructor(nome, dataNascimento, email, contato1,contato2,area,lattes) {
-        super(nome, dataNascimento, email, contato1,contato2);
+      constructor(nome, dataNascimento, email,matricula, contato1,contato2,area,lattes) {
+        super(nome, dataNascimento, email, matricula,contato1,contato2);
         this.area = area;
         this.lattes = lattes;
       }
@@ -41,7 +41,7 @@
     </head>
   <body>
      
-    <form id="cadastroForm" action="pagina_destino.html" method="=post">
+    <form id="cadastroForm" action="pagina_destino.html" method="post">
         <h1>Formulário  de Cadastro:</h1>
         <div>
           <label for="nome">Nome:</label>
@@ -82,10 +82,10 @@
         <div class="professor-fields">
             <label for="area">Área:</label>
             <input type="text" id="area" name="area" 
-            placeholder="Digite sua área de atuação" required><br><br>
+            placeholder="Digite sua área de atuação" ><br><br>
             <label for="lattes">Lattes:</label>
-            <input type="text" id="area" name="area" 
-              placeholder="Digite aqui o endereço para seu Lattes " required><br><br>
+            <input type="text" id="lattes" name="lattes" 
+              placeholder="Digite aqui o endereço para seu Lattes " ><br><br>
         </div>
         <div class="center">
             <input type="submit" id="enviar" value="Enviar">
@@ -96,6 +96,7 @@
       </div>
     </form>
     <script>
+      
      document.getElementById("aluno").addEventListener("change", function() {
         alunoFields.style.display = this.checked ? "block" : "none";
         professorFields.style.display = this.checked ? "none" : "block";
@@ -116,71 +117,83 @@
       }); 
       /*document.getElementById("cadastroForm").addEventListener("submit", function (event) {
         event.preventDefault(); */
-         // Função para verificar se todos os campos obrigatórios estão preenchidos
+      // Função para verificar se todos os campos obrigatórios estão preenchidos
       function verificarCampos() {
         const camposObrigatorios = document.querySelectorAll('[required]');
         let todosPreenchidos = true;
 
           camposObrigatorios.forEach(function (campo) {
-                if (campo.value.trim() === '') {
+            if (campo.value.trim() === '') {
                     todosPreenchidos = false;
                     return;
                 }
             });
 
-            enviarButton.disabled = !todosPreenchidos;
-        }
-        cadastroForm.addEventListener("submit", function (event) {
-          if (!cadastroForm.checkValidity()) {
-                event.preventDefault();
-                alert("Por favor, preencha todos os campos obrigatórios.");
-          } else {
-        
-            
-            const nome = document.getElementById("nome").value;
-            const dataNascimento = document.getElementById("dataNascimento").value;
-            const email = document.getElementById("email").value;
-            const contato1 = document.getElementById("contato1").value;
-            const contato2 = document.getElementById("contato2").value;
-            const tipo = document.querySelector('input[name="tipo"]:checked').value;
-        
-
-
-            let info = `Nome: ${nome}<br>Data de Nascimento: ${dataNascimento}<br>Email: ${email}<br>Contato Fixo: ${contato1}<br>Contato Celular: ${contato2}`;
-
-            if (tipo === "aluno") {
-              const curso = document.getElementById("curso").value;
-                console.log("Cadastro de Aluno:", { nome, dataNascimento, email, contato1, contato2, curso });
-                  info += `<br>Curso: ${curso}`;
-            } else {
-              const area = document.getElementById("area").value;
-              const lattes = document.getElementById("lattes").value;
-              console.log("Cadastro de Professor:", { nome, dataNascimento, email, contato1, contato2, area, lattes });
-                info += ` <br>Área: ${area} <br>Lattes: ${lattes}`;
-            
-            }
-            cadastroInfo.innerHTML = info;
-            cadastroResult.style.display = "block";
-            unoFields.style.display = this.checked ? "none" : "block";
+          enviarButton.disabled = !todosPreenchidos;
+          const tipo = document.querySelector('input[name="tipo"]:checked').value;
+          if (tipo === "aluno") {
+            alunoFields.style.display = "block";
+            professorFields.style.display = "none";
+          } else if (tipo === "professor") {
+            alunoFields.style.display = "none";
+            professorFields.style.display = "block";
           }
-      });
+        }
+      cadastroForm.addEventListener("submit", function (event) {
+          if (!cadastroForm.checkValidity()) {
+              event.preventDefault();
+              alert("Por favor, preencha todos os campos obrigatórios.");
+              return;
+          } 
+   
+          const nome = document.getElementById("nome").value;
+          const dataNascimento = document.getElementById("dataNascimento").value;
+          const email = document.getElementById("email").value;
+          const matricula = document.getElementById("matricula").value;
+          const contato1 = document.getElementById("contato1").value;
+          const contato2 = document.getElementById("contato2").value;
+          const tipo = document.querySelector('input[name="tipo"]:checked').value;
+        
+
+
+          let info = `Nome: ${nome}<br>Data de Nascimento: ${dataNascimento}<br>Email: ${email}<br>Matricula: ${matricula}<br>Contato Fixo: ${contato1}<br>Contato Celular: ${contato2}`;
+
+          if (tipo === "aluno") {
+            const curso = document.getElementById("curso").value;
+            console.log("Cadastro de Aluno:", { nome, dataNascimento, email, matricula, contato1, contato2, curso });
+             info += `<br>Curso: ${curso}`;
+          } 
+          if (tipo === "professor") {
+            const area = document.getElementById("area").value;
+            const lattes = document.getElementById("lattes").value;
+            console.log("Cadastro de Professor:", { nome, dataNascimento, email, matricula, contato1, contato2, area, lattes });
+             info += ` <br>Área: ${area} <br>Lattes: ${lattes}`;
+          }
+          cadastroInfo.innerHTML = info;
+          cadastroResult.style.display = "block";
+            alunoFields.style.display = tipo === "aluno" ? "block" : "none";
+            professorFields.style.display = tipo === "professor" ? "block" : "none";
+          
       
+        });
+      
+
       
       // Adicionar evento input para verificar campos à medida que são preenchidos
       cadastroForm.addEventListener("input", verificarCampos);
-
-      document.getElementById("aluno").addEventListener("change", function () {
-            alunoFields.style.display = this.checked ? "block" : "none";
-            professorFields.style.display = this.checked ? "none" : "block";
-            verificarCampos(); // Verificar campos quando o tipo é alterado
-      });
+ 
+       document.getElementById("aluno").addEventListener("change", function () {
+          alunoFields.style.display = this.checked ? "block" : "none";
+          professorFields.style.display = this.checked ? "none" : "block";
+          verificarCampos(); // Verificar campos quando /* o tipo é alterado
+      }); 
 
       document.getElementById("professor").addEventListener("change", function () {
         professorFields.style.display = this.checked ? "block" : "none";
         alunoFields.style.display = this.checked ? "none" : "block";
-        verificarCampos(); // Verificar campos quando o tipo é alterado
+        verificarCampos(); // Verificar campos quando o tipo é alterado*/
       });
-           
+            
     </script>      
   </body>
 </html>
