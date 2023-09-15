@@ -1,50 +1,124 @@
-class Calculadora{
-    constructor(){
-        this.operacao;
-        this.visor;
-        this.status;
-    }
-   
+
+// Variáveis para rastrear o histórico e os valores
+let currentInput = '0';
+let operator = '';
+let history = '';
+
+// Função para atualizar o visor
+function updateDisplay() {
+  document.getElementById('display').value = currentInput;
+  document.getElementById('history').innerText = history;
 }
 
- const lista = Array.from(document.getElementsByClassName('numeros'));
-/*const visor = document.createElement('input');
-    visor.type = 'text';
-    visor.classList.add('visor');
-    calculadoraDiv.appendChild(visor);
-             */
-const botoes =[
-       '7','8','9', '/',
-       '4','5','6', '*',
-       '1', '2', '3','-',
-       '0', '.','=', '+',
-];
-const calculadora =document.createElement('div');
-calculadora.id = 'calculadora';
+// Função para adicionar um número ao visor
+function add_numero(numero) {
+  if (currentInput === '0' || currentInput === 'Erro') {
+    currentInput = numero.toString();
+  } else {
+    currentInput += numero.toString();
+  }
+  updateDisplay();
+}
 
-botoes.forEach(botao => {
-    const btn = document.createElement('button');
-    btn.textContent = botao;
-    btn.addEventListener('click',()=>{
-        if(botao ==='='){
-            calcular();
+// Função para adicionar um operador ao visor
+function add_operador(op) {
+  if (operator !== '') {
+    total();
+  }
+  operator = op;
+  history = currentInput + ' ' + op;
+  currentInput = '0';
+  updateDisplay();
+}
 
-        }else{
-            visor.value+= botao;
+// Função para realizar o cálculo
+function total() {
+  if (operator === '') {
+    return;
+  }
+  const num1 = parseFloat(history);
+  const num2 = parseFloat(currentInput);
+  switch (operator) {
+    case '+':
+      currentInput = (num1 + num2).toString();
+      break;
+    case '-':
+      currentInput = (num1 - num2).toString();
+      break;
+    case '*':
+      currentInput = (num1 * num2).toString();
+      break;
+    case '/':
+      if (num2 === 0) {
+        currentInput = 'Erro';
+      } else {
+        currentInput = (num1 / num2).toString();
+      }
+      break;
+      case '%':
+        if (num1 !== '%') {
+            currentInput = (num1 * (num2 / 100)).toString();
+          }
+        break;
+       
+  }
+  operator = '';
+  history = '';
+  updateDisplay();
+}
+
+// Função para limpar o visor
+function limpar() {
+  currentInput = '0';
+  operator = '';
+  history = '';
+  updateDisplay();
+}
+// Função para realizar o cálculo
+function total() {
+    if (operator === '') {
+      return;
+    }
+    const num1 = parseFloat(history);
+    const num2 = parseFloat(currentInput);
+    switch (operator) {
+      case '+':
+        currentInput = (num1 + num2).toString();
+        break;
+      case '-':
+        currentInput = (num1 - num2).toString();
+        break;
+      case '*':
+        currentInput = (num1 * num2).toString();
+        break;
+      case '/':
+        if (num2 === 0) {
+          currentInput = 'Erro';
+        } else {
+          currentInput = (num1 / num2).toString();
         }
-        calculadora.appendChild(btn);
-    });
-
-});
-function calcular(){
-    try{
-        visor.value = eval(visor.value);
-    }catch (error){
-        visor.value ="erro";
+        break;
+      case '%' :
+        if (num1!== '%') {
+            currentInput = (num1 *(num2 / 100)).toString();   
+        }
+        break
+        //adicionar mais uma operação
     }
-}
-const calculadora =  new Calculadora
-calculadoraDiv.appendChild(calculadora);
-
+    operator = '';
+    history = '';
+    updateDisplay();
+  }
+  
+  // Função para limpar o visor
+  function limpar() {
+    currentInput = '0';
+    operator = '';
+    history = '';
+    updateDisplay();
+  }
+  
+  // Inicialize o visor
+  updateDisplay();
             
        
