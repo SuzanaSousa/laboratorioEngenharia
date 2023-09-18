@@ -74,51 +74,7 @@ function limpar() {
   history = '';
   updateDisplay();
 }
-// Função para realizar o cálculo
-function total() {
-    if (operator === '') {
-      return;
-    }
-    const num1 = parseFloat(history);
-    const num2 = parseFloat(currentInput);
-    switch (operator) {
-      case '+':
-        currentInput = (num1 + num2).toString();
-        break;
-      case '-':
-        currentInput = (num1 - num2).toString();
-        break;
-      case '*':
-        currentInput = (num1 * num2).toString();
-        break;
-      case '/':
-        if (num2 === 0) {
-          currentInput = 'Erro';
-        } else {
-          currentInput = (num1 / num2).toString();
-        }
-        break;
-      case '%' :
-        if (num1!== '%') {
-            currentInput = (num1 *(num2 / 100)).toString();   
-        }
-        break
-        //adicionar mais uma operação
-    }
-    operator = '';
-    history = '';
-    updateDisplay();
-  }
-  
-  // Função para limpar o visor
-  function limpar() {
-    currentInput = '0';
-    operator = '';
-    history = '';
-    updateDisplay();
-  }
-  
-  // Inicialize o visor
-  updateDisplay();
+// Inicialize o visor
+updateDisplay();
             
        

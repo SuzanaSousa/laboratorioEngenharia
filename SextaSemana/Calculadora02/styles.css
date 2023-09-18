@@ -1,0 +1,35 @@
+#calculadora {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#visor {
+    grid-column: span 4;
+    font-size: 24px;
+    height: 50px;
+}
+
+button {
+    font-size: 20px;
+    height: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+
+

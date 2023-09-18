@@ -7,7 +7,7 @@
 }
   
 body {
-    background: url(/img/background.png) #e0dddd98;
+    background: url(/img/background.png) #c3d1aa98;
     color: #ec3f3f;
     font-size: 16px;
   
@@ -43,21 +43,22 @@ body {
 .display {
     margin: 50px 0 60px;
     text-align: right;
+   
 
 }
   
 .display input {
     background: transparent;
     border: none;
-    color: #1f0202ba;
+    color: #0b0101ba;
     font-size: 40px;
-    font-weight: 400;
+    font-weight: 400px;
     text-align: right;
     width: 50%;
 }
   
 .display h2 {
-    color: #a56d0b;
+    color: #0e0229;
     font-size: 15px;
     font-weight: 500;
     height: 18px;
