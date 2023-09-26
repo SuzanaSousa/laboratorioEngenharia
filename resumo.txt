@@ -30,3 +30,22 @@ arrow function - () =>
 
 
 
+
+
+
+19/09/2023
+React  criar interface complexas, adicionar um interaçao muito grande
+tradicional.
+na web um aplicação que ja existe  ou criar do zero.
+
+(virtual dom )
+jsx -  especificação  do javascript,
+babel - conjunto de ferramentas para converter  
+
+so funciona na web tradicional poderar ser aplicado  dois id;
+
+
+
+
+
+

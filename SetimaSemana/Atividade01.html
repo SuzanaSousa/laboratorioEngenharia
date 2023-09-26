@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Setima Semana: Adicionando React á minha página</title>
+        
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            function typeWriter(){
+               
+                     txt : 'Venha  estudar  na Fatec';
+                    
+                 
+                
+            }
+            const container  = document.getElementById('root');
+            const root = ReactDom.createRoot(container);
+            function typeWriter(){
+                if (i < txt.length){
+                    document.getElementById('demo').innerHTML += charArt(i);
+                    i++;
+
+                }
+            }
+            /* function tick(){
+                let now = new Date().toLocaleTimeString();
+                root.render(<Elemento venha = {now}/>);
+            } */
+            setInterval(typeWriter,1000);
+            
+
+        </script>
+    </body>
+</html>
