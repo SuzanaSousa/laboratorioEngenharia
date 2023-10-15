@@ -1,40 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Setima Semana: Adicionando React á minha página</title>
-        
-        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    </head>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Setima Semana: Adicionando React à minha página</title>
+            <!-- Inclua as bibliotecas do React compiladas e do Babel Standalone -->
+            <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+            <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+            <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+            <link rel="stylesheet" href="./CSS/styles.css">
+        </head>
     <body>
-        <div id="root"></div>
+        <div id="root"></div>  
+         <!-- Crie um elemento script com type="text/babel" para seu código React -->
+    
+    
         <script type="text/babel">
-            function typeWriter(){
-               
-                     txt : 'Venha  estudar  na Fatec';
-                    
-                 
-                
-            }
-            const container  = document.getElementById('root');
-            const root = ReactDom.createRoot(container);
-            function typeWriter(){
-                if (i < txt.length){
-                    document.getElementById('demo').innerHTML += charArt(i);
-                    i++;
+        // Importe o React e Component
+       
+            
+        class Letreiro extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    texto:'Venha Estudar na FATEC', // O texto que será exibido no letreiro
+                    atual: 0, // Índice da letra atual
+                    };
+                }
 
+                componentDidMount() {
+                    // Inicie a animação do letreiro após o componente ser montado
+                    this.Animar();
+                }
+
+                Animar() {
+                    // Use um intervalo para mostrar uma letra por vez
+                    this.intervalId = setInterval(() => {
+                        const { texto, atual } = this.state;
+                        if (atual < texto.length - 1) {
+                            // Se ainda houver letras para exibir
+                            this.setState({ atual: atual + 1 });
+                        } else {
+                            // Caso contrário, reinicie a animação
+                            this.setState({ atual: 0 });
+                        }
+                    }, 1500); // Ajuste a velocidade da animação conforme necessário
+                }
+
+                componentWillUnmount() {
+                    // Limpe o intervalo quando o componente for desmontado
+                    clearInterval(this.intervalId);
+                }
+
+                render() {
+                    const { texto, atual } = this.state;
+                    const letreiro = texto.substring(0, atual + 1);
+
+                    return (
+                        
+                    React.createElement('div' ,{className:'letreiro-container'},
+                    React.createElement('p',{className:'letreiro-texto'},letreiro)
+                    )
+                        
+                    );
                 }
             }
-            /* function tick(){
-                let now = new Date().toLocaleTimeString();
-                root.render(<Elemento venha = {now}/>);
-            } */
-            setInterval(typeWriter,1000);
-            
 
+            // Renderize o componente Letreiro no elemento com id "root"
+            ReactDOM.render(<Letreiro />, document.getElementById('root'));
         </script>
     </body>
-</html>
+
+</html
+

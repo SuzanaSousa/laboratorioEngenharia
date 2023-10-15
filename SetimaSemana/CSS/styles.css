@@ -1,0 +1,33 @@
+.letreiro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    color:#180303;
+    font-weight: bold;
+    background-color: #ce0f0f; 
+    width: 40%;
+    margin-left: 30%;
+    height: 30%;
+    border-radius: 3px;
+    border: 6px outset rgb(239, 176, 28);
+}
+.letreiro-texto {
+    animation: letreiroAnimacao 60s linear infinite; /* Ajuste a duração da animação conforme necessário */
+    display: inline-block;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    overflow: hidden; /* Oculta o texto além do contêiner */
+    border-right: 3px solid transparent; /* Cria uma "borda" simulando o cursor */
+    animation: typing 2s steps(40) infinite;
+}
+
+
+@keyframes letreiroAnimacao {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+}
+
